@@ -13,12 +13,12 @@
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-    width: 40%;
+    width: 60%;
 }
 
 .linebar{
-  height: 2px;
-  margin-bottom: 2em;
+  height: 1px;
+  margin-bottom: 0.5em;
   width: 55%;
 }
 
@@ -72,4 +72,29 @@ input[type=button] {
 
 input[type=button]:hover {
     background-color: #45a049;
+}
+
+input[type=button] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=buttonFind]:hover {
+    background-color: #45a049;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 63%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
