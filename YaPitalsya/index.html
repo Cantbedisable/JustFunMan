@@ -3,50 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-RU-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/main.css">
   <script type="text/javascript">
-    function valid(form){debugger;
-      var mess = "";
-      var name = form.name.value;
-      var password = form.password.value;
-      var RePassword = form.RePassword.value;
-      var state = form.state.value;
-      if(name == "" || name == " " || name == "  ")
-        mess = mess + "Вы не ввели свое имя" + "\n";
-      if(password == "")
-        mess = mess + "Вы не ввели пароль"  + "\n";
-      if((RePassword != "") && (password != RePassword))
-        mess = mess + "Пароли не совпадают"  + "\n";
-      if(state == "")
-        mess = mess + "Укажите пол"  + "\n";
 
-      if(mess != ""){
-        alert(mess);
-      }else{
-        window.location = "index.html";
-        //window.reload  перезагрузка
-      }
-    }
   </script>
   <title>Изучение JavaScript</title>
 </head>
 <body>
-  <form action="" method="post" name="test" id="form">
-    <label for="name">Имя</label>
-    <input type="text" name="name" placeholder="Имя" id="name" /><br />
-    <br />
-    <label for="password">Пароль</label>
-    <input type="password" name="password" placeholder="Пароль" id="password" /><br />
-    <br />
-    <label for="RePassword">Повтор пароля</label>
-    <input type="password" name="RePassword" placeholder="Введите пароль" id="RePassword" /><br />
-    <br />
-    <span>Пол:</span>
-    <input type="radio" name="state"  id="male" value="Мужской" /><label for="male">Мужской</label>
-    <input type="radio" name="state"  id="female" value="Женский" /><label for="female">Женский</label><br />
-    <br />
-    <input type="button" onclick="valid(document.getElementById('form'))" name="submit" value="Готово" />
-  </form>
+  <div class="container">
+    <h2 class="header">Справочник банков</h2>
+  </div>
+  <form class="linebar"></form>
+  <div class="container">
+    <div class="row">
+      <div class="col-25">
+        <label for="BIK">БИК</label>
+      </div>
+      <div class="col-65">
+        <input type="text" id="BIK" name="BIK" placeholder="БИК..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Name">Наименование</label>
+      </div>
+      <div class="col-65">
+        <input type="text" id="Name" name="Name" placeholder="Наименование..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="corrAcc">Корсчет</label>
+      </div>
+      <div class="col-65">
+        <input type="text" id="corrAcc" name="corrAcc" placeholder="Корсчет..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="adress">Адрес</label>
+      </div>
+      <div class="col-65">
+        <input type="text" id="adress" name="adress" placeholder="Адрес..">
+      </div>
+    </div>
+  </div>
+  <form class="linebar"></form>
+    <div class="container">
+      <div class="row">
+        <input type="button" value="Просмотр">
+        <input type="button" value="Просмотр">
+      </div>
+  </div>
 </body>
 </html>
