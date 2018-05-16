@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <!--link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css">
+  <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></-->
+  <title>Изучение JavaScript</title>
+</head>
+<body>
+    <h2 class="header">Справочник банков. Добавление</h2>
+  <form class="linebar"></form>
+  <div class="container">
+    <div class="row">
+      <div class="col-25">
+        <label for="BIK">БИК</label>
+      </div>
+      <div class="col-65">
+        <input type="text" id="BIK" name="BIK" placeholder="БИК..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Name">Наименование</label>
+      </div>
+      <div class="col-65">
+        <input type="text" id="Name" name="Name" placeholder="Наименование..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="corrAcc">Корсчет</label>
+      </div>
+      <div class="col-65">
+        <input type="text" id="corrAcc" name="corrAcc" placeholder="Корсчет..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="adress">Адрес</label>
+      </div>
+      <div class="col-65">
+        <input type="text" id="adress" name="adress" placeholder="Адрес..">
+      </div>
+    </div>
+    <div class="row" align="right">
+      <form class="linebar"></form>
+      <input type="button" value="Сохранить" id="btnSave()" onclick="onClickBtnSave()">
+      <input type="button" value="Отмена" id="btnCancel()" onclick="onClickBtnCancel()">
+    </div>
+  <script src="js/jsCodeForAddForm.js" type="text/JavaScript"></script>
+</body>
+</html>

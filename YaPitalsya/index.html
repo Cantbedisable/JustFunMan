@@ -7,25 +7,9 @@
   <link rel="stylesheet" href="css/main.css">
   <!--link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css">
   <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></-->
-  <script type="text/javascript">
-    var tableContent = [];
-    function Bank(bik,name,corrAcc,adress){
-      this.BIK = bik;
-      this.Name = name;
-      this.corrAcc = corrAcc;
-      this.adress = adress;
-    }
-    var VTB = new Bank(2132,"VTB",84564,"sosat");
-    var ALFA = new Bank(2184,"ALFA",985,"hui");
-    var SBER = new Bank(784,"SBER",369,"chlen");
-    tableContent.push(VTB);
-    tableContent.push(ALFA);
-    tableContent.push(SBER);
-
-  </script>
   <title>Изучение JavaScript</title>
 </head>
-<body>
+<body  onload="contentTableOnReady()">
     <h2 class="header">Справочник банков</h2>
   <form class="linebar"></form>
   <div class="container">
@@ -62,6 +46,7 @@
       </div>
     </div>
     <div class="row" align="right">
+      <form class="linebar"></form>
       <input type="button" value="Поиск" id="btnFind" onclick="Test()">
     </div>
   </div>
@@ -69,7 +54,7 @@
     <div class="container">
       <div class="row">
         <input type="button" value="Просмотр">
-        <input type="button" value="Добавление">
+        <input type="button" value="Добавление" onclick="onClickButtonAdd();">
         <input type="button" value="Изменение">
         <input type="button" value="Удаление">
       </div>
@@ -82,12 +67,7 @@
       <th>Корсчет</th>
       <th>Адрес</th>
     </tr>
-    <tr>
-      <td>12123132121212</td>
-      <td>пизда собаки</td>
-      <td>sad</td>
-      <td>улица залупы</td>
-    </tr>
   </table>
+  <script src="js/JavaSCode.js" type="text/JavaScript"></script>
 </body>
 </html>
