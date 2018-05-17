@@ -1,8 +1,8 @@
 var tableContent = localStorage.tableContent ? JSON.parse(localStorage.tableContent) : [];
 var bikForFind = localStorage.getItem('BIK');
+var mode = localStorage.getItem('mode');
 
 function contentForm(){
-  var mode = localStorage.getItem('mode');
   if(mode == "edit"){
     document.getElementById('formCaption').innerHTML = "Справочник банков. Изменение";
     //заполняем поля
@@ -46,10 +46,27 @@ function onClickBtnSave(){
   if(adress == ""){adress += 'Не заполнено поле "Адрес"';}
   //else if че то не алешка сегодня
   if(mess == ""){
-    var newBank = new Bank(bik,name,corr,adress);
-    tableContent.push(newBank);
-    localStorage.tableContent = JSON.stringify(tableContent);
-    document.location.href = "index.html";
+    if(mode == "edit"){
+      for(var i = 0; i < tableContent.length; i++){
+        var bank = tableContent[i];
+        var bikIn = bank.BIK;
+        if(bikIn == bikForFind){
+          bank.BIK = bik;
+          bank.Name = name;
+          bank.corrAcc = corr;
+          bank.adress = adress;
+        }
+      }
+      localStorage.tableContent = JSON.stringify(tableContent);
+      localStorage.setItem('BIK',"");
+      localStorage.setItem('mode',"");
+      document.location.href = "index.html";
+    }else{
+      var newBank = new Bank(bik,name,corr,adress);
+      tableContent.push(newBank);
+      localStorage.tableContent = JSON.stringify(tableContent);
+      document.location.href = "index.html";
+    }
   }else{
     alert(mess);
     return false;
