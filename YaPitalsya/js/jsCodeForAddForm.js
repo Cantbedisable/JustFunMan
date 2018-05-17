@@ -91,13 +91,27 @@ function onInput(e){
 //попробуем регулярочку для паттерна Коррсчета
 var inputCorr = document.getElementById('corrAcc');
 var Corrvalue = inputCorr.value;
-inputCorr.addEventListener('input', onInput);
+inputCorr.addEventListener('input', onInput2);
 
-function onInput(e){
+function onInput2(e){
   var newValue = e.target.value;
   if( newValue.match(/[A-Za-zА-Яа-яЁё\s\D]/g)) {
      inputCorr.value = Corrvalue;
      return;
   }
   Corrvalue = newValue;
+}
+
+//попробуем регулярочку для паттерна Наименования
+var inputName = document.getElementById('Name');
+var Namevalue = inputName.value;
+inputName.addEventListener('input', onInput2);
+
+function onInput2(e){
+  var newValue = e.target.value;
+  if( newValue.match(/[/=.+?&^№@!*;%_/g]/)) {
+     inputName.value = Namevalue;
+     return;
+  }
+  Namevalue = newValue;
 }
