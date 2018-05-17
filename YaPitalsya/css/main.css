@@ -27,6 +27,11 @@
     display: inline-block;
 }
 
+a.b {
+    font-style: normal;
+    font-weight: bold;
+}
+
 .col-25 {
     float: left;
     width: 30%;
@@ -37,6 +42,12 @@
     float: left;
     width: 66.5%;
     margin-top: 6px;
+}
+
+.col-75{
+  float: left;
+  width: 66.5%;
+  margin-top: 16px;
 }
 
 .row:after {

@@ -3,7 +3,7 @@ var bikForFind = "";
 function contentTableOnReady(){
   if(tableContent.length > 0){
     var table = document.getElementById('bankTable');
-    var html = table.innerHTML.replace("<tbody>","").replace("</tbody>","");//небольшой костыль, по рукам сильно не бейте ток
+    var html = table.innerHTML.replace("<tbody>","").replace("</tbody>","");//небольшой костыль, по рукам сильно не бейте)
     for(var i = 0; i < tableContent.length; i++){
       var bank = tableContent[i];
       var bik = bank.BIK;
@@ -24,14 +24,29 @@ function contentTableOnReady(){
 
 var selected_row = null;
 
-function select_row(row){debugger;
+function select_row(row){
   if(selected_row != null) selected_row.className = '';
   selected_row = row;
   var chooseBIK = row.cells[0].innerText;
+  bikForFind = chooseBIK;
   localStorage.setItem('BIK', chooseBIK);
   if(selected_row != null) selected_row.className = 'selected';
 }
 
-function onClickButtonAdd(){
+function onClickBtnAdd(){
+  localStorage.setItem('mode', 'add');
   document.location.href = "addForm.html";
+}
+
+function onCLickBtnView(){
+  if(bikForFind != ""){
+    document.location.href = "viewForm.html";
+  }
+}
+
+function onCLickBtnEdit(){
+  if(bikForFind != ""){
+    localStorage.setItem('mode', 'edit');
+    document.location.href = "addForm.html";
+  }
 }

@@ -1,4 +1,28 @@
 var tableContent = localStorage.tableContent ? JSON.parse(localStorage.tableContent) : [];
+var bikForFind = localStorage.getItem('BIK');
+
+function contentForm(){
+  var mode = localStorage.getItem('mode');
+  if(mode == "edit"){
+    document.getElementById('formCaption').innerHTML = "Справочник банков. Изменение";
+    //заполняем поля
+    for(var i = 0; i < tableContent.length; i++){
+      var bank = tableContent[i];
+      var bik = bank.BIK;
+      if(bik == bikForFind){
+        var name = bank.Name;
+        var corr = bank.corrAcc;
+        var adr = bank.adress;
+        document.getElementById('BIK').value = bik;
+        document.getElementById('Name').value = name;
+        document.getElementById('corrAcc').value = corr;
+        document.getElementById('adress').value = adr;
+      }
+    }
+  }else{
+    document.getElementById('formCaption').innerHTML = "Справочник банков. Добавление";
+  }
+}
 
 function Bank(bik,name,corrAcc,adress){
   this.BIK = bik;
@@ -10,7 +34,7 @@ function Bank(bik,name,corrAcc,adress){
 function onClickBtnCancel(){
   document.location.href = "index.html";
 }
-function onClickBtnSave(){debugger;
+function onClickBtnSave(){
   var bik = document.getElementById('BIK').value;
   var name = document.getElementById('Name').value;
   var corr = document.getElementById('corrAcc').value;

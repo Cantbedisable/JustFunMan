@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <!--link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css">
+  <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></-->
+  <title>Изучение JavaScript</title>
+</head>
+<body onload="contentForm()">
+    <h2 class="header">Справочник банков. Просмотр</h2>
+  <form class="linebar"></form>
+  <div class="container">
+    <div class="row">
+      <div class="col-25">
+        <label>БИК</label>
+      </div>
+      <div class="col-75">
+        <a class="b" id="lbBIK">БИК</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label>Наименование</label>
+      </div>
+      <div class="col-75">
+        <a class="b" id="lbName"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label>Корсчет</label>
+      </div>
+      <div class="col-75">
+        <a class="b" id="lbCorrAcc"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label>Адрес</label>
+      </div>
+      <div class="col-75">
+        <a class="b" id="lbAdress"></a>
+      </div>
+    </div>
+  </div>
+  <form class="linebar"></form>
+    <div class="container" align="right">
+      <div class="row">
+        <input type="button" value="Закрыть" onclick="onClickBtnClose()">
+      </div>
+  </div>
+  <script src="js/jsCodeViewForm.js" type="text/JavaScript"></script>
+</body>
+</html>
