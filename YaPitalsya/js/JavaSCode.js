@@ -1,14 +1,5 @@
-var tableContent = localStorage.getItem('tableContent');
-if(tableContent == null || tableContent == ""){
-  tableContent = [];
-}
-/*
-var VTB = new Bank(2132,"VTB",84564,"sosat");
-var ALFA = new Bank(2184,"ALFA",985,"hui");
-var SBER = new Bank(784,"SBER",369,"chlen");
-tableContent.push(VTB);
-tableContent.push(ALFA);
-tableContent.push(SBER);*/
+var tableContent = localStorage.tableContent ? JSON.parse(localStorage.tableContent) : [];
+var bikForFind = "";
 function contentTableOnReady(){
   if(tableContent.length > 0){
     var table = document.getElementById('bankTable');
@@ -19,7 +10,7 @@ function contentTableOnReady(){
       var name = bank.Name;
       var corr = bank.corrAcc;
       var adr = bank.adress;
-      var newTeg = "<tr>" + "<td>" + bik + "</td>"
+      var newTeg = "<tr onclick='select_row(this)'>" + "<td>" + bik + "</td>"
                           + "<td>" + name + "</td>"
                           + "<td>" + corr + "</td>"
                           + "<td>" + adr + "</td>"
@@ -29,6 +20,16 @@ function contentTableOnReady(){
     var newHtml = "<tbody>" + html + "</tbody>";
     table.innerHTML = newHtml;
   }
+}
+
+var selected_row = null;
+
+function select_row(row){debugger;
+  if(selected_row != null) selected_row.className = '';
+  selected_row = row;
+  var chooseBIK = row.cells[0].innerText;
+  localStorage.setItem('BIK', chooseBIK);
+  if(selected_row != null) selected_row.className = 'selected';
 }
 
 function onClickButtonAdd(){

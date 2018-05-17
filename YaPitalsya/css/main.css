@@ -12,7 +12,7 @@
 .container {
     border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 20px;
+    padding: 10px;
     width: 60%;
 }
 
@@ -54,12 +54,19 @@ input[type=text], select, textarea {
 }
 
 
-@media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
-        width: 100%;
-        margin-top: 0;
+@media screen and (max-width: 790px) {
+    .col-25, .col-65{
+      width: 80%;
+      margin-top: 0;
     }
 }
+@media screen and (max-width: 600px){
+    input[type=button] {
+        width: 100%;
+        margin-top: 2;
+      }
+}
+
 
 input[type=button] {
     background-color: #4CAF50;
@@ -78,7 +85,7 @@ input[type=button]:hover {
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 63%;
+    width: 100%;
 }
 
 td, th {
@@ -86,3 +93,5 @@ td, th {
     text-align: left;
     padding: 8px;
 }
+
+.selected { background-color:#E2EEFF; }

@@ -1,7 +1,4 @@
-var tableContent = localStorage.getItem('tableContent');
-if(tableContent == null || tableContent == ""){
-  tableContent = [];
-}
+var tableContent = localStorage.tableContent ? JSON.parse(localStorage.tableContent) : [];
 
 function Bank(bik,name,corrAcc,adress){
   this.BIK = bik;
@@ -27,7 +24,7 @@ function onClickBtnSave(){debugger;
   if(mess == ""){
     var newBank = new Bank(bik,name,corr,adress);
     tableContent.push(newBank);
-    localStorage.setItem('tableContent',tableContent);
+    localStorage.tableContent = JSON.stringify(tableContent);
     document.location.href = "index.html";
   }else{
     alert(mess);
