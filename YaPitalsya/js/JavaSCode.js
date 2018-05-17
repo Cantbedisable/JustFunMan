@@ -122,3 +122,18 @@ function findBankByParam(bik,name){
   localStorage.setItem('Name', name);
   document.location.href = "index.html";
 }
+
+
+//попробуем регулярочку для паттерна БИК
+var inputBIK = document.getElementById('BIK');
+var BIKvalue = inputBIK.value;
+inputBIK.addEventListener('input', onInput);
+
+function onInput(e){
+  var newValue = e.target.value;
+  if( newValue.match(/[A-Za-zА-Яа-яЁё\s\D]/g)) {
+     inputBIK.value = BIKvalue;
+     return;
+  }
+  BIKvalue = newValue;
+}

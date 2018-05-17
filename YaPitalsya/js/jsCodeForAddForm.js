@@ -72,3 +72,32 @@ function onClickBtnSave(){
     return false;
   }
 }
+
+
+//попробуем регулярочку для паттерна БИК
+var inputBIK = document.getElementById('BIK');
+var BIKvalue = inputBIK.value;
+inputBIK.addEventListener('input', onInput);
+
+function onInput(e){
+  var newValue = e.target.value;
+  if( newValue.match(/[A-Za-zА-Яа-яЁё\s\D]/g)) {
+     inputBIK.value = BIKvalue;
+     return;
+  }
+  BIKvalue = newValue;
+}
+
+//попробуем регулярочку для паттерна Коррсчета
+var inputCorr = document.getElementById('corrAcc');
+var Corrvalue = inputCorr.value;
+inputCorr.addEventListener('input', onInput);
+
+function onInput(e){
+  var newValue = e.target.value;
+  if( newValue.match(/[A-Za-zА-Яа-яЁё\s\D]/g)) {
+     inputCorr.value = Corrvalue;
+     return;
+  }
+  Corrvalue = newValue;
+}
